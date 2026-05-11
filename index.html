@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Radha Krishna — The Eternal Symbol of Divine Love</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel+Decorative:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C8973A;
+    --gold-light: #E8C06A;
+    --gold-pale: #F5E6C0;
+    --deep: #1A0A00;
+    --warm: #2C1008;
+    --crimson: #8B1A1A;
+    --saffron: #D4622A;
+    --peacock: #1A4A5C;
+    --cream: #FDF6E3;
+    --text: #3D1F00;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--deep);
+    color: var(--cream);
+    font-family: 'Cormorant Garamond', serif;
+    overflow-x: hidden;
+  }
+
+  /* ─── PARTICLES CANVAS ─── */
+  #particles {
+    position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background: radial-gradient(ellipse 80% 70% at 50% 60%, #3B1500 0%, #1A0800 50%, #0D0400 100%);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 20% 80%, rgba(200,151,58,0.12) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(212,98,42,0.10) 0%, transparent 50%);
+  }
+
+  .mandala {
+    position: absolute;
+    width: min(700px, 95vw);
+    height: min(700px, 95vw);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.07;
+    animation: spin 120s linear infinite;
+  }
+
+  @keyframes spin { to { transform: translate(-50%,-50%) rotate(360deg); } }
+
+  .hero-inner {
+    position: relative; z-index: 2;
+    padding: 2rem;
+    animation: fadeUp 1.8s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity:0; transform: translateY(40px); }
+    to   { opacity:1; transform: translateY(0); }
+  }
+
+  .om {
+    font-size: clamp(2rem, 6vw, 4rem);
+    color: var(--gold);
+    letter-spacing: 0.3em;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 40px rgba(200,151,58,0.6);
+    animation: pulse 3s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%,100% { text-shadow: 0 0 40px rgba(200,151,58,0.6); }
+    50%      { text-shadow: 0 0 80px rgba(200,151,58,0.9), 0 0 120px rgba(200,151,58,0.4); }
+  }
+
+  .hero h1 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(2.2rem, 7vw, 5.5rem);
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--gold-pale) 0%, var(--gold) 40%, var(--saffron) 70%, var(--gold-pale) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.15;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-sub {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    font-style: italic;
+    color: var(--gold-light);
+    letter-spacing: 0.12em;
+    margin-bottom: 2rem;
+    opacity: 0.85;
+  }
+
+  .hero-quote {
+    font-size: clamp(0.95rem, 2vw, 1.25rem);
+    font-style: italic;
+    color: var(--gold-pale);
+    max-width: 560px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.8;
+    opacity: 0.75;
+    border-left: 2px solid var(--gold);
+    padding-left: 1.2rem;
+    text-align: left;
+  }
+
+  .scroll-hint {
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    color: var(--gold);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    animation: bounce 2s ease-in-out infinite;
+  }
+
+  .scroll-hint svg { width: 20px; }
+
+  @keyframes bounce {
+    0%,100% { transform: translateY(0); }
+    50%      { transform: translateY(8px); }
+  }
+
+  /* ─── DECORATIVE DIVIDER ─── */
+  .divider {
+    display: flex; align-items: center; justify-content: center; gap: 1rem;
+    padding: 0.5rem 0;
+  }
+
+  .divider-line { flex: 1; max-width: 200px; height: 1px; background: linear-gradient(to right, transparent, var(--gold), transparent); }
+  .divider-lotus { color: var(--gold); font-size: 1.4rem; }
+
+  /* ─── SECTION BASE ─── */
+  section {
+    position: relative; z-index: 1;
+    padding: clamp(3rem, 8vw, 6rem) clamp(1rem, 5vw, 4rem);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--saffron);
+    margin-bottom: 0.8rem;
+  }
+
+  h2 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(1.4rem, 4vw, 2.8rem);
+    color: var(--gold-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+  }
+
+  h3 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+  }
+
+  p {
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    line-height: 1.9;
+    color: #E8D5B0;
+    font-weight: 300;
+    margin-bottom: 1.2rem;
+  }
+
+  /* ─── BACKGROUND BANDS ─── */
+  .band-dark { background: #0D0400; }
+  .band-warm { background: linear-gradient(180deg, #140800 0%, #1E0C00 100%); }
+  .band-deep { background: linear-gradient(180deg, #0A0300 0%, #12060A 100%); }
+
+  /* ─── WHO ARE RADHA KRISHNA — TWO CARD ─── */
+  .cards-duo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  @media(max-width: 680px) { .cards-duo { grid-template-columns: 1fr; } }
+
+  .deity-card {
+    position: relative;
+    border: 1px solid rgba(200,151,58,0.25);
+    background: linear-gradient(145deg, rgba(44,16,8,0.9), rgba(26,8,0,0.95));
+    padding: 2.5rem 2rem;
+    border-radius: 2px;
+    overflow: hidden;
+    transition: transform 0.4s ease, border-color 0.4s ease;
+  }
+
+  .deity-card:hover { transform: translateY(-6px); border-color: rgba(200,151,58,0.6); }
+
+  .deity-card::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .deity-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  /* ─── SYMBOLS ROW ─── */
+  .symbols-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .symbol-tile {
+    text-align: center;
+    padding: 2rem 1rem;
+    border: 1px solid rgba(200,151,58,0.18);
+    background: rgba(255,255,255,0.02);
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .symbol-tile:hover {
+    background: rgba(200,151,58,0.08);
+    border-color: rgba(200,151,58,0.45);
+    transform: scale(1.04);
+  }
+
+  .symbol-tile .icon { font-size: 2.2rem; margin-bottom: 0.7rem; }
+
+  .symbol-tile p {
+    font-size: 0.95rem;
+    color: var(--gold-pale);
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  /* ─── QUOTE BLOCK ─── */
+  .big-quote {
+    position: relative;
+    margin: 3rem 0;
+    padding: 2.5rem 3rem;
+    border-left: 4px solid var(--gold);
+    background: linear-gradient(135deg, rgba(200,151,58,0.06) 0%, rgba(26,8,0,0.4) 100%);
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-style: italic;
+    color: var(--gold-pale);
+    line-height: 1.7;
+  }
+
+  .big-quote::before {
+    content: '\201C';
+    position: absolute;
+    top: -0.5rem; left: 1rem;
+    font-size: 6rem;
+    color: var(--gold);
+    opacity: 0.3;
+    font-family: Georgia, serif;
+    line-height: 1;
+  }
+
+  /* ─── STORY TIMELINE ─── */
+  .timeline {
+    position: relative;
+    margin-top: 2.5rem;
+    padding-left: 2.5rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute; left: 0.5rem; top: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute; left: -2.5rem; top: 0.5rem;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 12px var(--gold);
+  }
+
+  /* ─── LESSONS ─── */
+  .lessons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .lesson-card {
+    padding: 2rem 1.5rem;
+    background: linear-gradient(145deg, rgba(139,26,26,0.15), rgba(26,8,0,0.8));
+    border: 1px solid rgba(212,98,42,0.2);
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .lesson-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--saffron), var(--gold));
+    transform: scaleX(0);
+    transition: transform 0.35s ease;
+    transform-origin: left;
+  }
+
+  .lesson-card:hover::before { transform: scaleX(1); }
+  .lesson-card:hover { border-color: rgba(212,98,42,0.45); transform: translateY(-4px); }
+
+  .lesson-num {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 2.5rem;
+    color: rgba(200,151,58,0.2);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  /* ─── FESTIVALS ─── */
+  .fest-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .fest-card {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    background: radial-gradient(ellipse at top, rgba(200,151,58,0.12) 0%, rgba(10,3,0,0.9) 70%);
+    border: 1px solid rgba(200,151,58,0.2);
+    transition: all 0.35s ease;
+  }
+
+  .fest-card:hover {
+    background: radial-gradient(ellipse at top, rgba(200,151,58,0.22) 0%, rgba(10,3,0,0.9) 70%);
+    border-color: var(--gold);
+    transform: translateY(-5px);
+  }
+
+  .fest-icon { font-size: 2.8rem; margin-bottom: 1rem; }
+
+  /* ─── FAQ ACCORDION ─── */
+  .faq { margin-top: 2rem; }
+
+  .faq-item {
+    border-bottom: 1px solid rgba(200,151,58,0.15);
+    overflow: hidden;
+  }
+
+  .faq-q {
+    width: 100%; background: none; border: none; cursor: pointer;
+    padding: 1.4rem 0;
+    text-align: left;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    color: var(--gold-light);
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 1rem;
+    transition: color 0.3s;
+  }
+
+  .faq-q:hover { color: var(--gold-pale); }
+
+  .faq-icon {
+    width: 22px; height: 22px; flex-shrink: 0;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold);
+    font-size: 1rem;
+    transition: transform 0.3s, background 0.3s;
+  }
+
+  .faq-item.open .faq-icon {
+    transform: rotate(45deg);
+    background: var(--gold);
+    color: var(--deep);
+  }
+
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.3s ease;
+    color: #C8AA7A;
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+
+  .faq-item.open .faq-a { max-height: 200px; padding-bottom: 1.2rem; }
+
+  /* ─── TEMPLES STRIP ─── */
+  .temples-row {
+    display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem;
+  }
+
+  .temple-pill {
+    padding: 0.6rem 1.5rem;
+    border: 1px solid rgba(200,151,58,0.35);
+    color: var(--gold-light);
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    background: rgba(200,151,58,0.06);
+    transition: all 0.3s;
+    cursor: default;
+  }
+
+  .temple-pill:hover { background: rgba(200,151,58,0.18); border-color: var(--gold); }
+
+  /* ─── DÉCOR ITEMS ─── */
+  .decor-list {
+    display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1rem;
+  }
+
+  .decor-tag {
+    padding: 0.5rem 1.2rem;
+    background: rgba(26,74,92,0.3);
+    border: 1px solid rgba(26,74,92,0.6);
+    color: #A8D8E8;
+    font-size: 0.9rem;
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  .decor-tag:hover { background: rgba(26,74,92,0.6); }
+
+  /* ─── CONCLUSION CTA ─── */
+  .conclusion-wrap {
+    text-align: center;
+    padding: clamp(3rem, 8vw, 6rem) 2rem;
+    position: relative;
+    background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(200,151,58,0.1) 0%, transparent 70%);
+  }
+
+  .conclusion-wrap::before {
+    content: 'ॐ';
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: clamp(12rem, 30vw, 22rem);
+    color: rgba(200,151,58,0.04);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .conclusion-wrap p {
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+    position: relative;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 1rem 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+    transition: background 0.4s, backdrop-filter 0.4s;
+  }
+
+  nav.scrolled {
+    background: rgba(13,4,0,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(200,151,58,0.15);
+  }
+
+  .nav-logo {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1rem;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+  }
+
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+
+  .nav-links a {
+    color: var(--gold-pale);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-family: 'Lato', sans-serif;
+    opacity: 0.7;
+    transition: opacity 0.3s, color 0.3s;
+  }
+
+  .nav-links a:hover { opacity: 1; color: var(--gold); }
+
+  @media(max-width: 600px) { .nav-links { display: none; } }
+
+  /* ─── FOOTER ─── */
+  footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid rgba(200,151,58,0.12);
+    color: rgba(200,151,58,0.4);
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    font-family: 'Lato', sans-serif;
+  }
+
+  /* ─── SCROLL REVEAL ─── */
+  .reveal {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ─── PEACOCK FEATHER ACCENT ─── */
+  .feather-accent {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--gold);
+    opacity: 0.4;
+    margin: 1rem 0;
+    letter-spacing: 1rem;
+  }
+
+</style>
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-logo">Radha Krishna</div>
+  <ul class="nav-links">
+    <li><a href="#who">About</a></li>
+    <li><a href="#story">Story</a></li>
+    <li><a href="#lessons">Teachings</a></li>
+    <li><a href="#festivals">Festivals</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <svg class="mandala" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#C8973A" stroke-width="0.5">
+    <circle cx="250" cy="250" r="240"/>
+    <circle cx="250" cy="250" r="200"/>
+    <circle cx="250" cy="250" r="160"/>
+    <circle cx="250" cy="250" r="120"/>
+    <circle cx="250" cy="250" r="80"/>
+    <circle cx="250" cy="250" r="40"/>
+    <g transform="rotate(0 250 250)"><line x1="250" y1="10" x2="250" y2="490"/><line x1="10" y1="250" x2="490" y2="250"/></g>
+    <g transform="rotate(22.5 250 250)"><line x1="250" y1="10" x2="250" y2="490"/><line x1="10" y1="250" x2="490" y2="250"/></g>
+    <g transform="rotate(45 250 250)"><line x1="250" y1="10" x2="250" y2="490"/><line x1="10" y1="250" x2="490" y2="250"/></g>
+    <g transform="rotate(67.5 250 250)"><line x1="250" y1="10" x2="250" y2="490"/><line x1="10" y1="250" x2="490" y2="250"/></g>
+    <!-- Lotus petals -->
+    <g transform="rotate(0 250 250)"><ellipse cx="250" cy="130" rx="18" ry="40" opacity="0.6"/></g>
+    <g transform="rotate(45 250 250)"><ellipse cx="250" cy="130" rx="18" ry="40" opacity="0.6"/></g>
+    <g transform="rotate(90 250 250)"><ellipse cx="250" cy="130" rx="18" ry="40" opacity="0.6"/></g>
+    <g transform="rotate(135 250 250)"><ellipse cx="250" cy="130" rx="18" ry="40" opacity="0.6"/></g>
+    <g transform="rotate(180 250 250)"><ellipse cx="250" cy="130" rx="18" ry="40" opacity="0.6"/></g>
+    <g transform="rotate(225 250 250)"><ellipse cx="250" cy="130" rx="18" ry="40" opacity="0.6"/></g>
+    <g transform="rotate(270 250 250)"><ellipse cx="250" cy="130" rx="18" ry="40" opacity="0.6"/></g>
+    <g transform="rotate(315 250 250)"><ellipse cx="250" cy="130" rx="18" ry="40" opacity="0.6"/></g>
+  </svg>
+
+  <div class="hero-inner">
+    <div class="om">ॐ</div>
+    <h1>Radha Krishna</h1>
+    <div class="hero-sub">The Eternal Symbol of Divine Love</div>
+    <blockquote class="hero-quote">
+      "Radha without Krishna is incomplete,<br>and Krishna without Radha is silent."
+    </blockquote>
+    <div class="scroll-hint">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      Explore the Divine
+    </div>
+  </div>
+</div>
+
+<!-- WHO ARE RADHA KRISHNA -->
+<div class="band-warm" id="who">
+<section class="reveal">
+  <div class="section-label">The Divine Pair</div>
+  <h2>Who Are Radha Krishna?</h2>
+  <p>Few divine relationships have touched human hearts as deeply as <a href="https://artarium.com/collections/radha-krishna-god-idols">Radha Krishna</a>  Their story is not simply about romance — it represents devotion, purity, spiritual connection, and unconditional love that rises beyond all worldly boundaries.</p>
+
+  <div class="cards-duo">
+    <div class="deity-card reveal">
+      <span class="deity-icon">🪈</span>
+      <h3>Lord Krishna</h3>
+      <p>The eighth incarnation of Vishnu — beloved for his wisdom, compassion, charm, and playful nature. His teachings in the Bhagavad Gita continue to guide people toward righteous living, inner peace, and spiritual understanding. Remembered for his enchanting flute and joyful childhood in Vrindavan.</p>
+    </div>
+    <div class="deity-card reveal">
+      <span class="deity-icon">🌸</span>
+      <h3>Radha Devi</h3>
+      <p>Considered the embodiment of devotion and pure love. Radha is not just Krishna's companion — she represents the soul's eternal longing for union with the divine. Viewed as the supreme devotee whose love for Krishna was completely selfless and unconditional in every sacred tradition.</p>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- SPIRITUAL MEANING -->
+<div class="band-dark">
+<section class="reveal">
+  <div class="section-label">Spiritual Significance</div>
+  <h2>The Deeper Meaning</h2>
+
+  <div class="big-quote">
+    Their bond represents the connection between the human soul and divine consciousness — Krishna as supreme divine energy, Radha as the devoted soul seeking eternal union.
+  </div>
+
+  <div class="symbols-grid">
+    <div class="symbol-tile reveal">
+      <div class="icon">💛</div>
+      <p>Divine Love</p>
+    </div>
+    <div class="symbol-tile reveal">
+      <div class="icon">🔱</div>
+      <p>Spiritual Connection</p>
+    </div>
+    <div class="symbol-tile reveal">
+      <div class="icon">🪷</div>
+      <p>Devotion Beyond Ego</p>
+    </div>
+    <div class="symbol-tile reveal">
+      <div class="icon">☯️</div>
+      <p>Soul & God Harmony</p>
+    </div>
+    <div class="symbol-tile reveal">
+      <div class="icon">✨</div>
+      <p>Emotional Purity</p>
+    </div>
+    <div class="symbol-tile reveal">
+      <div class="icon">🎵</div>
+      <p>Inner Surrender</p>
+    </div>
+  </div>
+
+  <p style="margin-top:2rem">The devotion of Radha toward Krishna inspired the Bhakti movement, where saints like <strong style="color:var(--gold-light)">Surdas, Meerabai, and Jayadeva</strong> created beautiful devotional literature. They emphasized personal love and devotion toward God rather than rigid rituals.</p>
+</section>
+</div>
+
+<!-- STORY -->
+<div class="band-warm" id="story">
+<section class="reveal">
+  <div class="section-label">The Sacred Story</div>
+  <h2>Their Eternal Story</h2>
+
+  <div class="timeline">
+    <div class="timeline-item reveal">
+      <h3>Childhood in Vrindavan</h3>
+      <p>The story begins in Vrindavan, where Krishna spent his childhood. His playful nature, flute melodies, and joyful interactions with the gopis became legendary. Among all devotees, Radha shared the deepest spiritual connection with him — a bond born of music, divine conversation, and emotional understanding.</p>
+    </div>
+    <div class="timeline-item reveal">
+      <h3>Raas Leela — The Cosmic Dance</h3>
+      <p>The famous Raas Leela symbolizes cosmic love and spiritual bliss rather than ordinary romance. In the moonlit forests of Vrindavan, this divine dance became an expression of the soul's joyful union with the divine, inspiring generations of poets, artists, and saints.</p>
+    </div>
+    <div class="timeline-item reveal">
+      <h3>The Symbolism of the Flute</h3>
+      <p>Krishna's flute represents the human heart emptied of ego — a vessel for divine music that guides the soul toward spiritual awakening. Devotees believe his flute calls every soul toward divine truth, just as Radha responded with pure, unwavering devotion.</p>
+    </div>
+    <div class="timeline-item reveal">
+      <h3>The Bhakti Legacy</h3>
+      <p>Their love story became the bedrock of India's devotional literature and music. The sacred bond of Radha and Krishna continues to inspire classical dance forms, bhajans, temple art, and spiritual practice across the entire world.</p>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- LESSONS -->
+<div class="band-deep" id="lessons">
+<section class="reveal">
+  <div class="section-label">Life Wisdom</div>
+  <h2>Timeless Teachings</h2>
+  <p>The bond of Radha Krishna offers profound lessons that transcend centuries and cultures.</p>
+
+  <div class="lessons-grid">
+    <div class="lesson-card reveal">
+      <div class="lesson-num">01</div>
+      <h3>Love Without Conditions</h3>
+      <p>Radha's love was not based on material gain or expectation. It teaches emotional purity and genuine, selfless care.</p>
+    </div>
+    <div class="lesson-card reveal">
+      <div class="lesson-num">02</div>
+      <h3>Devotion Creates Peace</h3>
+      <p>Spiritual devotion brings calmness and emotional strength even during the most difficult of times.</p>
+    </div>
+    <div class="lesson-card reveal">
+      <div class="lesson-num">03</div>
+      <h3>Ego Separates, Love Unites</h3>
+      <p>Krishna's teachings emphasize letting go of ego, anger, and attachment to experience true happiness.</p>
+    </div>
+    <div class="lesson-card reveal">
+      <div class="lesson-num">04</div>
+      <h3>Spirituality is Joyful</h3>
+      <p>Unlike rigid practices, Krishna's life shows devotion can include music, dance, celebration, and happiness.</p>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- FESTIVALS -->
+<div class="band-warm" id="festivals">
+<section class="reveal">
+  <div class="section-label">Sacred Celebrations</div>
+  <h2>Festivals of Divine Love</h2>
+
+  <div class="fest-grid">
+    <div class="fest-card reveal">
+      <div class="fest-icon">🌙</div>
+      <h3>Janmashtami</h3>
+      <p>Celebrates the birth of Krishna with prayers, fasting, bhajans, and temple decorations that fill every home with devotion.</p>
+    </div>
+    <div class="fest-card reveal">
+      <div class="fest-icon">🌺</div>
+      <h3>Radhashtami</h3>
+      <p>Honors the birth of Radha, celebrating her extraordinary devotion and the purity of her divine love for Krishna.</p>
+    </div>
+    <div class="fest-card reveal">
+      <div class="fest-icon">🎨</div>
+      <h3>Holi in Vrindavan</h3>
+      <p>Holi celebrations in Vrindavan are deeply associated with <a href="https://artarium.com/collections/radha-krishna-god-idols">Radha Krishna</a>, attracting devotees from around the entire world.</p>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- TEMPLES & CULTURE -->
+<div class="band-dark">
+<section class="reveal">
+  <div class="section-label">Sacred Places & Culture</div>
+  <h2>Temples & Artistic Legacy</h2>
+
+  <p>From magnificent temples to classical dance and devotional music, Radha Krishna's influence permeates every corner of Indian culture and spirituality.</p>
+
+  <div class="divider"><div class="divider-line"></div><div class="divider-lotus">🪷</div><div class="divider-line"></div></div>
+
+  <h3 style="margin-bottom:0.8rem; margin-top:1.5rem">Famous Temples</h3>
+  <div class="temples-row">
+    <div class="temple-pill">🏛 Banke Bihari Temple</div>
+    <div class="temple-pill">🏛 ISKCON Vrindavan</div>
+    <div class="temple-pill">🏛 Prem Mandir</div>
+    <div class="temple-pill">🏛 Radha Raman Temple</div>
+    <div class="temple-pill">🏛 Govind Dev Temple</div>
+  </div>
+
+  <h3 style="margin-top:2.5rem; margin-bottom:0.8rem">Home Décor & Spiritual Spaces</h3>
+  <p>Many people decorate their homes with Radha Krishna idols and artwork to invite love, harmony, and peaceful energy.</p>
+  <div class="decor-list">
+    <div class="decor-tag">🪔 Brass Idols</div>
+    <div class="decor-tag">🖼 Wall Paintings</div>
+    <div class="decor-tag">⛩ Temple Décor</div>
+    <div class="decor-tag">🤍 Marble Statues</div>
+    <div class="decor-tag">💡 Decorative Lamps</div>
+    <div class="decor-tag">🎨 Pichkari Art</div>
+  </div>
+
+  <p style="margin-top:1.5rem">These items are cherished in living rooms, meditation spaces, and pooja rooms, creating an atmosphere of positivity, love, and spiritual balance.</p>
+</section>
+</div>
+
+<!-- FAQ -->
+<div class="band-warm" id="faq">
+<section class="reveal">
+  <div class="section-label">Common Questions</div>
+  <h2>Frequently Asked</h2>
+
+  <div class="faq">
+    <div class="faq-item">
+      <button class="faq-q">Why are Radha and Krishna worshipped together? <span class="faq-icon">+</span></button>
+      <div class="faq-a">Radha and Krishna symbolize divine love and spiritual unity. Together, they represent the connection between the individual soul and God — a union that is the highest aspiration of every devotee.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Was Radha Krishna's relationship romantic or spiritual? <span class="faq-icon">+</span></button>
+      <div class="faq-a">Spiritually, their bond represents pure devotion and unconditional love that transcends worldly relationships. It is regarded as the purest form of love — the soul's longing for reunion with the divine source.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Why is Krishna said to be incomplete without Radha? <span class="faq-icon">+</span></button>
+      <div class="faq-a">In devotional traditions, Radha represents devotion itself. Krishna's divine presence becomes emotionally complete through Radha's love — she is the shakti, the divine energy, that animates his divine expression.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">What does Radha symbolize? <span class="faq-icon">+</span></button>
+      <div class="faq-a">Radha symbolizes unconditional devotion, emotional purity, and the soul's eternal longing for divine connection. She is considered the supreme devotee — a model for how every soul can approach the divine.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Why are Radha Krishna paintings popular in homes? <span class="faq-icon">+</span></button>
+      <div class="faq-a">People believe Radha Krishna artwork brings harmony, positivity, love, and peaceful energy into living spaces. Their divine presence is thought to bless the home with spiritual balance and emotional warmth.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">How can one connect with Radha Krishna in daily life? <span class="faq-icon">+</span></button>
+      <div class="faq-a">Through chanting mantras, singing bhajans, reading scriptures, visiting temples, meditation, celebrating festivals, or simply lighting a diya near Radha Krishna idols — even a small spiritual connection can bring surprising calmness and positivity.</div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- CONCLUSION -->
+<div class="band-dark">
+<div class="conclusion-wrap reveal">
+  <div style="position:relative; z-index:1; max-width:900px; margin:0 auto; padding:0 1rem;">
+    <div class="section-label" style="text-align:center">The Eternal Truth</div>
+    <h2 style="text-align:center; margin-bottom:1.5rem">A Timeless Source of Peace</h2>
+
+    <p>The story of Radha Krishna continues to inspire hearts because it speaks a universal language — the language of love, devotion, and spiritual connection. Their bond reminds humanity that the deepest relationships are built not on possession or ego, but on trust, purity, surrender, and emotional understanding.</p>
+
+    <p>Whether through bhajans, temple visits, paintings, meditation, or simple daily prayers, Radha Krishna remain a timeless source of peace and inspiration for millions around the world. Their divine presence teaches that love becomes truly meaningful when it is selfless, spiritual, and rooted in compassion.</p>
+
+    <div class="feather-accent">🪶 🪶 🪶</div>
+
+    <div class="divider" style="margin:2rem 0">
+      <div class="divider-line"></div>
+      <div style="color:var(--gold); font-family:'Cinzel Decorative',serif; font-size:0.8rem; letter-spacing:0.2em;">JAI RADHE KRISHNA</div>
+      <div class="divider-line"></div>
+    </div>
+
+    <p style="text-align:center; font-style:italic; color:var(--gold-pale); font-size:1.3rem;">
+      "Where love is pure, there God resides."
+    </p>
+  </div>
+</div>
+</div>
+
+<footer>
+  <div style="margin-bottom:0.5rem">🪷 ॐ श्री राधाकृष्णाभ्यां नमः 🪷</div>
+  Radha Krishna — The Eternal Symbol of Divine Love
+</footer>
+
+<script>
+// ── PARTICLES ──
+(function() {
+  const canvas = document.getElementById('particles');
+  const ctx = canvas.getContext('2d');
+  let W, H, particles = [];
+
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+
+  function Particle() {
+    this.x = Math.random() * W;
+    this.y = Math.random() * H;
+    this.r = Math.random() * 1.2 + 0.3;
+    this.speed = Math.random() * 0.3 + 0.1;
+    this.angle = Math.random() * Math.PI * 2;
+    this.opacity = Math.random() * 0.5 + 0.1;
+    this.color = Math.random() > 0.5 ? '#C8973A' : '#D4622A';
+  }
+
+  Particle.prototype.update = function() {
+    this.y -= this.speed;
+    this.x += Math.sin(this.angle + Date.now() * 0.001) * 0.3;
+    if (this.y < -10) { this.y = H + 10; this.x = Math.random() * W; }
+  };
+
+  function init() {
+    resize();
+    particles = Array.from({length: 80}, () => new Particle());
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    particles.forEach(p => {
+      p.update();
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = p.color;
+      ctx.globalAlpha = p.opacity;
+      ctx.fill();
+    });
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', resize);
+  init();
+  draw();
+})();
+
+// ── NAVBAR ──
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// ── SCROLL REVEAL ──
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), 80);
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+reveals.forEach(r => observer.observe(r));
+
+// ── FAQ ACCORDION ──
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>
